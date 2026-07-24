@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800;900&display=swap');
+
+:root {
+  --bg: #04100B;
+  --bg2: #071912;
+  --bg3: #0B241A;
+  --bg-card: rgba(7, 25, 18, 0.95);
+  --text: #F0ECE4;
+  --text2: #C4BDB3;
+  --text3: #8A837A;
+  --accent: #C9A86C;
+  --accent-bright: #F3E5AB;
+  --accent-dim: #8A7350;
+  --cottons-emerald: #0A3E2B;
+  --line: rgba(201, 168, 108, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Film Grain Texture Overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  opacity: 0.025;
+  pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* Fixed Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(4, 16, 11, 0.96);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand-badge {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.brand-motto {
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.nav-status {
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid var(--line);
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: rgba(201, 168, 108, 0.08);
+}
+
+/* Main Container with Header Offset */
+.exhibition-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 150px 40px 80px;
+}
+
+/* Section Blocks */
+.section-block {
+  padding: 70px 0;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+
+.section-tag {
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.section-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.section-heading em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+/* Featured Hero Showcase Card */
+.featured-hero-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  background: var(--bg2);
+  border: 1px solid var(--line);
+  padding: 35px;
+  border-radius: 12px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.featured-img-frame {
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+.featured-img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Award Cards Grid */
+.award-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.award-card {
+  background: var(--bg2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.award-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.award-card-content {
+  padding: 24px;
+  flex-grow: 1;
+}
+
+.award-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.award-winner {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.award-detail {
+  font-size: 0.88rem;
+  color: var(--text2);
+}
+
+/* Teams Grid */
+.team-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.team-editorial-card {
+  background: var(--bg2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.team-editorial-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  color: var(--text);
+}
+
+.team-editorial-rank {
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 2px;
+}
+
+/* Food Grid with Real Photos */
+.food-luxury-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.food-luxury-card {
+  background: var(--bg2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.food-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.food-content {
+  padding: 24px;
+}
+
+.food-luxury-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.food-luxury-desc {
+  font-size: 0.9rem;
+  color: var(--text2);
+  line-height: 1.5;
+}
+
+/* Heritage Gallery Grid */
+.heritage-gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.heritage-photo-frame {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg2);
+}
+
+.heritage-photo {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.heritage-caption {
+  padding: 16px 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+/* Footer */
+.editorial-footer {
+  padding: 60px 0;
+  text-align: center;
+  border-top: 1px solid var(--line);
+}
+
+.footer-motto {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem;
+  color: var(--accent);
+  letter-spacing: 4px;
+  margin-bottom: 6px;
+}
+
+.footer-anthem {
+  font-style: italic;
+  color: var(--text2);
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .header { padding: 15px 20px; }
+  .exhibition-container { padding: 120px 20px 60px; }
+  .featured-hero-card, .heritage-gallery-grid { grid-template-columns: 1fr; }
+}
