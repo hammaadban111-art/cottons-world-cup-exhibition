@@ -34,7 +34,7 @@ export const topTeamsData = [
     pathway: "Group Winner → 1/16 def. Japan (3-0) → QF def. Germany (2-1) → SF def. France (2-1) → Final def. Argentina (1-0 AET)",
     star: "Rodri (Golden Ball) & Lamine Yamal",
     tactics: "High Tiki-Taka 4-3-3 Position Play",
-    img: "assets/images/team_spain_final.jpg"
+    img: "assets/images/spain_starting_xi_2026.jpg"
   },
   {
     name: "Argentina 🇦🇷",
